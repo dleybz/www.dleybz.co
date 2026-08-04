@@ -175,18 +175,18 @@ const PROGRAM = {
       { t:'reps', title:'Band pull-apart', sub:'10 reps' },
       { t:'reps', title:'Shoulder dislocate', sub:'10 reps, band or broomstick' },
       { t:'reps', title:'Scapular hang', sub:'10 reps' }],
-    cooldown: ['Hip flexor lunge','Quad stretch','Hamstring stretch','Doorway pec','Cross-body shoulder'],
+    cooldown: [{name:'Hip flexor lunge',sides:2},{name:'Quad stretch',sides:2},{name:'Hamstring stretch',sides:2},{name:'Doorway pec',sides:2},{name:'Cross-body shoulder',sides:2}],
     ex: [
-      { id:'squat', name:'Back squat', note:'bar + plates', unit:'lb', base:195, inc:10,
+      { id:'squat', barbell:true, name:'Back squat', note:'bar + plates', unit:'lb', base:195, inc:10,
         lo:6, hi:8, sets:3, rest:180, step:5,
         wu:[{bar:1,reps:10,rest:30},{pct:.50,reps:6,rest:45},{pct:.70,reps:4,rest:60},{pct:.85,reps:2,rest:120}] },
-      { id:'bench', name:'Bench press', note:'bar + plates', unit:'lb', base:165, inc:5,
+      { id:'bench', barbell:true, name:'Bench press', note:'bar + plates', unit:'lb', base:165, inc:5,
         lo:6, hi:8, sets:3, rest:180, step:5,
         wu:[{bar:1,reps:10,rest:30},{pct:.55,reps:6,rest:45},{pct:.75,reps:4,rest:60},{pct:.88,reps:2,rest:120}] },
       { id:'pullup', name:'Weighted pull-up', note:'belt', unit:'lb added', base:20, inc:5,
         lo:6, hi:8, sets:3, rest:150, step:5, plus:true,
         wu:[{bw:1,reps:5,rest:45},{fixed:10,reps:3,rest:90}] },
-      { id:'legcurl', name:'Leg curl', note:'machine — note which', unit:'lb', base:110, inc:5,
+      { id:'legcurl', name:'Leg curl', note:'machine \u2014 note which', unit:'lb', base:110, inc:5,
         lo:10, hi:12, sets:3, rest:90, step:5, est:true,
         wu:[{pct:.50,reps:10,rest:60}] },
       { id:'lat_a', name:'DB lateral raise', note:'slow negative, no swing', unit:'lb', base:15, inc:2.5,
@@ -199,15 +199,15 @@ const PROGRAM = {
       { t:'reps', title:'Hip 90/90', sub:'10 reps each side' },
       { t:'reps', title:'Band pull-apart', sub:'10 reps' },
       { t:'reps', title:'Scapular hang', sub:'10 reps' }],
-    cooldown: ['Hamstring stretch','Hip flexor lunge','Doorway pec','Child\u2019s pose, lat reach','Cross-body shoulder'],
+    cooldown: [{name:'Hamstring stretch',sides:2},{name:'Hip flexor lunge',sides:2},{name:'Doorway pec',sides:2},{name:'Child\u2019s pose, lat reach',sides:2},{name:'Cross-body shoulder',sides:2}],
     ex: [
-      { id:'deadlift', name:'Deadlift', note:'bar + plates', unit:'lb', base:255, inc:10,
+      { id:'deadlift', barbell:true, name:'Deadlift', note:'bar + plates', unit:'lb', base:255, inc:10,
         lo:3, hi:5, sets:3, rest:180, step:5,
         wu:[{fixed:65,reps:8,rest:45},{pct:.53,reps:5,rest:60},{pct:.72,reps:3,rest:90},{pct:.88,reps:2,rest:120}] },
       { id:'incdb', name:'Incline DB press', note:'per hand', unit:'lb', base:40, inc:5,
         lo:8, hi:12, sets:3, rest:120, step:5,
         wu:[{pct:.62,reps:8,rest:60}] },
-      { id:'row', name:'Bent-over row', note:'bar, torso ~45\u00b0', unit:'lb', base:155, inc:5,
+      { id:'row', barbell:true, name:'Bent-over row', note:'bar, torso ~45\u00b0', unit:'lb', base:155, inc:5,
         lo:8, hi:10, sets:3, rest:120, step:5,
         wu:[{pct:.61,reps:8,rest:45},{pct:.87,reps:5,rest:90}] },
       { id:'bulg', name:'Bulgarian split squat', note:'per hand \u00b7 per leg', unit:'lb', base:30, inc:5,
@@ -227,23 +227,23 @@ const PROGRAM = {
       { t:'reps', title:'Hip 90/90', sub:'10 reps each side' },
       { t:'reps', title:'Shoulder dislocate', sub:'10 reps, band or broomstick' },
       { t:'reps', title:'Band pull-apart', sub:'10 reps' }],
-    cooldown: ['Quad / couch stretch','Hamstring stretch','Doorway pec','Child\u2019s pose, lat reach','Cross-body shoulder'],
+    cooldown: [{name:'Quad / couch stretch',sides:2},{name:'Hamstring stretch',sides:2},{name:'Doorway pec',sides:2},{name:'Child\u2019s pose, lat reach',sides:2},{name:'Cross-body shoulder',sides:2}],
     ex: [
-      { id:'legpress', name:'Leg press', note:'machine — note which', unit:'lb', base:160, inc:10,
+      { id:'legpress', name:'Leg press', note:'machine \u2014 note which', unit:'lb', base:160, inc:10,
         lo:10, hi:12, sets:3, rest:150, step:5, est:true,
         wu:[{pct:.56,reps:10,rest:45},{pct:.81,reps:5,rest:90}] },
-      { id:'ohp', name:'Overhead press', note:'bar \u00b7 standing', unit:'lb', base:65, inc:5,
+      { id:'ohp', barbell:true, name:'Overhead press', note:'bar \u00b7 standing', unit:'lb', base:65, inc:5,
         lo:6, hi:10, sets:3, rest:150, step:5,
         warn:'New lift. Technique limits before strength does \u2014 stay conservative.',
         wu:[{bar:1,reps:8,rest:45},{pct:.85,reps:5,rest:90}] },
-      { id:'pulldown', name:'Lat pulldown', note:'machine — note which', unit:'lb', base:100, inc:5,
+      { id:'pulldown', name:'Lat pulldown', note:'machine \u2014 note which', unit:'lb', base:100, inc:5,
         lo:8, hi:12, sets:3, rest:120, step:5, est:true,
         wu:[{pct:.70,reps:8,rest:60}] },
-      { id:'rdl', name:'Romanian deadlift', note:'bar \u00b7 soft knees', unit:'lb', base:135, inc:10,
+      { id:'rdl', barbell:true, name:'Romanian deadlift', note:'bar \u00b7 soft knees', unit:'lb', base:135, inc:10,
         lo:8, hi:12, sets:3, rest:120, step:5,
         warn:'Hips back, stop when the lower back rounds. Not a max-load lift.',
         wu:[{pct:.48,reps:8,rest:45},{pct:.70,reps:5,rest:90}] },
-      { id:'pecdeck', name:'Pec deck', note:'machine — note which', unit:'lb', base:115, inc:5,
+      { id:'pecdeck', name:'Pec deck', note:'machine \u2014 note which', unit:'lb', base:115, inc:5,
         lo:10, hi:12, sets:2, rest:75, step:5, est:true,
         wu:[{pct:.61,reps:10,rest:60}] },
       { id:'pushdown', name:'Tricep pushdown', note:'cable', unit:'lb', base:47, inc:5,
@@ -274,7 +274,7 @@ function loadState(){
       const base = blankState();
       return Object.assign(base, s, { weights: Object.assign(base.weights, s.weights || {}) });
     }
-  } catch(e){ /* storage blocked — fall through */ }
+  } catch(e){ /* storage blocked \u2014 fall through */ }
   return memFallback || blankState();
 }
 function saveState(s){
@@ -298,11 +298,192 @@ function deloadWeight(ex, w){
 const fmtW = v => (Math.round(v * 10) / 10).toString().replace(/\.0$/, '');
 const mmss = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
 
+/* ---- plates ---- */
+const PLATES = [45, 25, 10, 5, 2.5];
+
+function calcPlatesPerSide(totalWeight) {
+  let perSide = Math.round(((totalWeight - BAR) / 2) * 10) / 10;
+  if (perSide <= 0) return [];
+  const result = [];
+  for (const p of PLATES) {
+    while (perSide >= p - 0.01) {
+      result.push(p);
+      perSide = Math.round((perSide - p) * 10) / 10;
+    }
+  }
+  return result;
+}
+
+function formatPlateList(plates) {
+  const counts = {};
+  plates.forEach(p => { counts[p] = (counts[p] || 0) + 1; });
+  return Object.entries(counts)
+    .sort(([a], [b]) => +b - +a)
+    .map(([p, n]) => n > 1 ? n + '\u00d7' + fmtW(+p) : fmtW(+p))
+    .join(' + ');
+}
+
+function plateFriendlyRound(target) {
+  if (target <= BAR) return BAR;
+  const nearest5 = Math.round((target - BAR) / 5) * 5 + BAR;
+  const candidates = [nearest5 - 5, nearest5, nearest5 + 5].filter(w => w >= BAR);
+  let best = nearest5, bestPlates = Infinity, bestDist = Infinity;
+  for (const w of candidates) {
+    const pc = calcPlatesPerSide(w).length;
+    const dist = Math.abs(w - target);
+    if (pc < bestPlates || (pc === bestPlates && dist < bestDist)) {
+      best = w; bestPlates = pc; bestDist = dist;
+    }
+  }
+  return best;
+}
+
+function plateChangeMsg(fromWeight, toWeight) {
+  if (fromWeight === toWeight || fromWeight < BAR || toWeight < BAR) return null;
+  const from = calcPlatesPerSide(fromWeight);
+  const to = calcPlatesPerSide(toWeight);
+  const fromBag = [...from], toBag = [...to];
+  for (let i = toBag.length - 1; i >= 0; i--) {
+    const idx = fromBag.indexOf(toBag[i]);
+    if (idx !== -1) { fromBag.splice(idx, 1); toBag.splice(i, 1); }
+  }
+  if (!fromBag.length && !toBag.length) return null;
+  let msg = '';
+  if (fromBag.length) msg += 'Remove ' + formatPlateList(fromBag) + ' each side';
+  if (fromBag.length && toBag.length) msg += ', add ';
+  if (toBag.length) msg += (fromBag.length ? '' : 'Add ') + formatPlateList(toBag) + ' each side';
+  return msg;
+}
+
+/* ---- exercise cues ---- */
+const CUES = {
+  squat: [
+    "Brace hard \u2014 big breath into your belt",
+    "Push your knees out over your pinky toes",
+    "Chest up, elbows under the bar",
+    "Push the floor away on the ascent",
+    "Control the descent \u2014 own every inch"
+  ],
+  bench: [
+    "Squeeze your shoulder blades together",
+    "Drive your feet into the floor",
+    "Bar path: chest to lockout, slight arc",
+    "Tuck elbows ~45\u00b0 from your torso",
+    "Grip hard \u2014 try to bend the bar"
+  ],
+  pullup: [
+    "Initiate with your lats, not your arms",
+    "Depress your shoulders before pulling",
+    "Drive elbows down and back",
+    "Full extension at the bottom",
+    "Squeeze at the top for a beat"
+  ],
+  legcurl: [
+    "Squeeze your hamstrings at peak contraction",
+    "Control the negative \u2014 2 seconds down",
+    "Keep your hips pressed into the pad",
+    "Don\u2019t let the weight stack touch between reps"
+  ],
+  lat_a: [
+    "Lead with your elbows, not your hands",
+    "Slight bend in the elbows, keep it fixed",
+    "Slow negative \u2014 fight gravity down",
+    "Stop at shoulder height, no higher",
+    "No swinging \u2014 strict reps only"
+  ],
+  lat_b: [
+    "Lead with your elbows, not your hands",
+    "Slight bend in the elbows, keep it fixed",
+    "Slow negative \u2014 fight gravity down",
+    "Stop at shoulder height, no higher",
+    "No swinging \u2014 strict reps only"
+  ],
+  deadlift: [
+    "Push the floor away with your legs",
+    "Lock your lats \u2014 protect your spine",
+    "Bar stays in contact with your legs",
+    "Hips and shoulders rise together",
+    "Stand tall and squeeze glutes at lockout"
+  ],
+  incdb: [
+    "Set the bench to about 30 degrees",
+    "Press in a slight arc, not straight up",
+    "Keep your shoulder blades pinched back",
+    "Lower to a deep stretch, elbows at ~45\u00b0",
+    "Match both arms \u2014 no chicken-winging"
+  ],
+  row: [
+    "Hinge at the hips, flat back, ~45\u00b0 torso",
+    "Pull to your lower ribcage",
+    "Squeeze your shoulder blades at the top",
+    "Control the descent \u2014 no dropping",
+    "Keep your core braced throughout"
+  ],
+  bulg: [
+    "Front shin stays vertical",
+    "Rear foot: laces down on the bench",
+    "Drop your back knee straight down",
+    "Keep your torso upright",
+    "Push through your front heel"
+  ],
+  ezcurl: [
+    "Keep your elbows pinned to your sides",
+    "Squeeze at the top, slow negative",
+    "No swinging \u2014 strict form",
+    "Wrist stays neutral on the EZ bar",
+    "Full extension at the bottom"
+  ],
+  legpress: [
+    "Feet shoulder-width, mid-platform",
+    "Press through your whole foot",
+    "Don\u2019t lock out your knees fully",
+    "Lower until thighs touch your torso",
+    "Keep your lower back pressed into the pad"
+  ],
+  ohp: [
+    "Brace your core and squeeze your glutes",
+    "Press just past your forehead, then push head through",
+    "Lock out directly over your mid-foot",
+    "Controlled negative back to shoulders",
+    "Vertical forearms at the start"
+  ],
+  pulldown: [
+    "Drive your elbows down and back",
+    "Slight lean back, chest up",
+    "Squeeze your lats at the bottom",
+    "Full extension at the top, feel the stretch",
+    "Lead with elbows, not hands"
+  ],
+  rdl: [
+    "Hips back, soft knees \u2014 don\u2019t squat it",
+    "Bar slides down your thighs",
+    "Stop when you feel your hamstrings stretch",
+    "Squeeze your glutes to stand back up",
+    "Keep your back flat \u2014 never rounded"
+  ],
+  pecdeck: [
+    "Slight bend in the elbows throughout",
+    "Squeeze hard at the front, hold a beat",
+    "Control the stretch on the way back",
+    "Keep your back against the pad",
+    "Think: hug a tree"
+  ],
+  pushdown: [
+    "Elbows pinned to your sides throughout",
+    "Squeeze the triceps hard at lockout",
+    "Slow negative \u2014 2 seconds up",
+    "Keep your torso upright, no leaning",
+    "Full extension at the bottom"
+  ]
+};
+
 function warmWeight(ex, w, spec){
   if (spec.bw)    return { label: 'BW', val: 0 };
   if (spec.bar)   return { label: fmtW(BAR), val: BAR };
   if (spec.fixed) return { label: (ex.plus ? '+' : '') + fmtW(spec.fixed), val: spec.fixed };
-  return { label: fmtW(roundTo(w * spec.pct, ex.step)), val: roundTo(w * spec.pct, ex.step) };
+  const raw = w * spec.pct;
+  const val = ex.barbell ? plateFriendlyRound(raw) : roundTo(raw, ex.step);
+  return { label: fmtW(val), val };
 }
 
 /* Build the flat step list for one session */
@@ -316,22 +497,34 @@ function buildSteps(key){
     ex.wu.forEach((spec, i) => {
       const ww = warmWeight(ex, w, spec);
       steps.push({ t:'set', phase: ex.name, exId: ex.id, exIdx: ei, warm:true,
-        label: ww.label, unit: ex.unit, reps: String(spec.reps),
-        idx: i+1, of: ex.wu.length + ex.sets, note: ex.note, warn: i===0 ? ex.warn : null });
-      steps.push({ t:'rest', phase: ex.name, secs: spec.rest });
+        label: ww.label, val: ww.val, unit: ex.unit, reps: String(spec.reps),
+        idx: i+1, of: ex.wu.length + ex.sets, note: ex.note, warn: i===0 ? ex.warn : null,
+        barbell: !!ex.barbell });
+      steps.push({ t:'rest', phase: ex.name, exId: ex.id, exIdx: ei, secs: spec.rest,
+        barbell: !!ex.barbell });
     });
     for (let i = 0; i < ex.sets; i++){
       const last = (i === ex.sets - 1);
       steps.push({ t:'set', phase: ex.name, exId: ex.id, exIdx: ei, warm:false,
-        label: (ex.plus ? '+' : '') + fmtW(w), unit: ex.unit,
+        label: (ex.plus ? '+' : '') + fmtW(w), val: w, unit: ex.unit,
         reps: ex.lo === ex.hi ? String(ex.hi) : ex.lo + '\u2013' + ex.hi, hi: ex.hi,
-        idx: ex.wu.length + i + 1, of: ex.wu.length + ex.sets, note: ex.note, est: ex.est, wIdx: i });
-      const lastOfAll = last && (ei === day.ex.length - 1);
-      if (!lastOfAll) steps.push({ t:'rest', phase: ex.name, secs: ex.rest });
+        idx: ex.wu.length + i + 1, of: ex.wu.length + ex.sets, note: ex.note, est: ex.est, wIdx: i,
+        barbell: !!ex.barbell });
+      if (!last) steps.push({ t:'rest', phase: ex.name, exId: ex.id, exIdx: ei, secs: ex.rest,
+        barbell: !!ex.barbell });
     }
   });
 
-  day.cooldown.forEach(c => steps.push({ t:'timer', phase:'Cool-down', title:c, sub:'Hold, breathe.', secs:45 }));
+  day.cooldown.forEach(c => {
+    const name = typeof c === 'string' ? c : c.name;
+    const sides = typeof c === 'string' ? 1 : (c.sides || 1);
+    if (sides === 2) {
+      steps.push({ t:'timer', phase:'Cool-down', title:name + ' (left)', sub:'Hold, breathe.', secs:45 });
+      steps.push({ t:'timer', phase:'Cool-down', title:name + ' (right)', sub:'Hold, breathe.', secs:45 });
+    } else {
+      steps.push({ t:'timer', phase:'Cool-down', title:name, sub:'Hold, breathe.', secs:45 });
+    }
+  });
   steps.push({ t:'summary', phase:'Done' });
   return steps;
 }
@@ -485,6 +678,21 @@ function back(){
   if (RUN.i === 0) { keepAwake(false); return go('day'); }
   RUN.i--; renderRun();
 }
+function comeBack() {
+  const st = RUN.steps[RUN.i];
+  if (st.exIdx == null) return;
+  const exIdx = st.exIdx;
+  const before = RUN.steps.slice(0, RUN.i);
+  const exSteps = [], otherSteps = [];
+  for (let i = RUN.i; i < RUN.steps.length; i++) {
+    if (RUN.steps[i].exIdx === exIdx) exSteps.push(RUN.steps[i]);
+    else otherSteps.push(RUN.steps[i]);
+  }
+  const insertIdx = otherSteps.findIndex(s => s.phase === 'Cool-down' || s.t === 'summary');
+  const idx = insertIdx !== -1 ? insertIdx : otherSteps.length;
+  RUN.steps = [...before, ...otherSteps.slice(0, idx), ...exSteps, ...otherSteps.slice(idx)];
+  renderRun();
+}
 
 function startTimer(secs, onEnd){
   TIMER = { total: secs, left: secs, running: true, finished: false, onEnd };
@@ -584,11 +792,32 @@ function renderRun(){
 
   /* ---- rest ---- */
   if (st.t === 'rest'){
-    if (!TIMER) { startTimer(st.secs, 'auto'); return; }
+    if (!TIMER) {
+      const cueList = CUES[st.exId] || [];
+      st.cue = cueList.length ? cueList[Math.floor(Math.random() * cueList.length)] : '';
+      startTimer(st.secs, 'auto'); return;
+    }
+    const nextStep = RUN.steps[RUN.i + 1];
+    const prevStep = RUN.steps[RUN.i - 1];
+    let weightInfo = '';
+    if (nextStep && nextStep.t === 'set') {
+      const same = prevStep && prevStep.t === 'set' && prevStep.val === nextStep.val && prevStep.unit === nextStep.unit;
+      weightInfo = '<p style="text-align:center;margin:12px 0 0;font-size:1rem;color:var(--dim)">Next: <strong style="color:var(--fg)">'
+        + h(nextStep.label) + ' ' + h(nextStep.unit) + '</strong> \u00d7 ' + h(nextStep.reps) + '</p>';
+      if (nextStep.barbell && prevStep && prevStep.t === 'set' && prevStep.val != null && nextStep.val != null) {
+        const change = plateChangeMsg(prevStep.val, nextStep.val);
+        if (change) {
+          weightInfo += '<p style="text-align:center;margin:6px 0 0;font-family:\'JetBrains Mono\',monospace;font-size:.76rem;color:var(--warn)">'
+            + h(change) + '</p>';
+        }
+      }
+    }
     app.innerHTML = head + `
       <div class="body timer">
         <p class="eyebrow">${h(st.phase)}</p>
+        ${st.cue ? `<p style="text-align:center;font-style:italic;margin:2px 0 8px;font-size:.88rem;color:var(--warn)">${h(st.cue)}</p>` : ''}
         ${ringSVG(true)}
+        ${weightInfo}
       </div>
       <div class="foot"><button class="btn sm" id="skip">SKIP REST \u2192</button></div>`;
     document.getElementById('bk').onclick = back;
@@ -639,6 +868,7 @@ function renderRun(){
   /* ---- a set ---- */
   if (st.t === 'set'){
     const ex = PROGRAM[RUN.key].ex[st.exIdx];
+    const showComeBack = st.idx === 1;
     app.innerHTML = head + `
       <div class="body">
         <p class="eyebrow">${h(st.phase)} \u00b7 set ${st.idx} of ${st.of}</p>
@@ -666,8 +896,10 @@ function renderRun(){
                <button class="btn ok" id="hit">HIT ${st.hi}</button>
                <button class="btn sm" id="miss">MISSED</button>
              </div>`}
+        ${showComeBack ? '<button class="btn ghost" id="comeback">Come back to this later</button>' : ''}
       </div>`;
     document.getElementById('bk').onclick = back;
+    if (showComeBack) document.getElementById('comeback').onclick = comeBack;
 
     if (st.warm){
       document.getElementById('d').onclick = advance;
@@ -682,10 +914,19 @@ function renderRun(){
       const bump = (dir) => {
         S.weights[ex.id] = Math.max(ex.step, S.weights[ex.id] + dir * ex.step);
         saveState(S);
-        // rebuild remaining steps so later sets + warm-ups reflect the new load
-        const done = RUN.results;
-        RUN.steps = buildSteps(RUN.key);
-        RUN.results = done;
+        const newW = S.weights[ex.id];
+        for (let j = RUN.i; j < RUN.steps.length; j++) {
+          const s = RUN.steps[j];
+          if (s.exId === ex.id && s.t === 'set') {
+            if (s.warm) {
+              const spec = ex.wu[s.idx - 1];
+              if (spec) { const ww = warmWeight(ex, newW, spec); s.label = ww.label; s.val = ww.val; }
+            } else {
+              s.label = (ex.plus ? '+' : '') + fmtW(newW);
+              s.val = newW;
+            }
+          }
+        }
         renderRun();
       };
       document.getElementById('up').onclick = () => bump(1);
